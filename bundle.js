@@ -122,8 +122,10 @@ module.exports = function (params, state, send) {
       }
 
       if (item.link) {
+        var huh = isActive(current, item.key)
+        console.log('huh', huh)
         return el`<div>
-          <a href="${item.link}" class="content-link ${isActive(current, item.key)}">${item.name}</a>
+          <a href="${item.link}" class="content-link">${item.name}</a>
         </div>`
       }
 
@@ -135,7 +137,7 @@ module.exports = function (params, state, send) {
     console.log('current', current, current.length)
     console.log('item', item, item.length)
     console.log('current === item', current === item)
-    //return current === item ? 'active' : ''
+    return current === item ? 'active' : ''
   }
 
   return el`<div class="${prefix} minidocs-sidebar">
