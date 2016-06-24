@@ -133,6 +133,7 @@ module.exports = function (params, state, send) {
   function isActive (current, item) {
     console.log('current', current, current.length)
     console.log('item', item, item.length)
+    console.log('current === item', current === item)
     return current === item ? 'active' : ''
   }
 
