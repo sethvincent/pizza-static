@@ -135,7 +135,7 @@ module.exports = function (params, state, send) {
     console.log('current', current, current.length)
     console.log('item', item, item.length)
     console.log('current === item', current === item)
-    return current === item ? 'active' : ''
+    //return current === item ? 'active' : ''
   }
 
   return el`<div class="${prefix} minidocs-sidebar">
