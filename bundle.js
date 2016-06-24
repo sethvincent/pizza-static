@@ -40,7 +40,10 @@ module.exports = function (params, state, send) {
   var html = state.html
   var currentPage = params.page || state.current
   var page = html[currentPage]
+  console.log('state.contents', state.contents)
   var pageData = state.contents.filter(function (item) {
+    console.log('item.key', item.key)
+    console.log('currentPage', currentPage)
     return item.key === currentPage
   })[0]
 
