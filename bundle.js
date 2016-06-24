@@ -122,6 +122,7 @@ module.exports = function (params, state, send) {
 
       if (item.link) {
         var active = isActive(current, item.key)
+        console.log('active?', item.key, active)
         return el`<div>
           <a href="${item.link}" class="content-link ${active}">${item.name}</a>
         </div>`
