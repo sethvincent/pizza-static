@@ -112,6 +112,7 @@ module.exports = function (params, state, send) {
 
       if (state.app && state.app.location) {
         location = url.parse(state.app.location)
+        console.log('parsed location', location)
         var sliceBy = state.basedir.length + 1
         current = location.pathname.slice(sliceBy)
       }
