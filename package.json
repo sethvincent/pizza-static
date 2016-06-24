@@ -4,7 +4,7 @@
   "description": "",
   "main": "contents.js",
   "scripts": {
-    "build": "minidocs docs/ -c contents.js -b /pizza-static -o dist",
+    "build": "minidocs docs/ -c contents.js -b /pizza-static -i pizza -o dist",
     "deploy": "npm run build && gh-pages -d dist"
   },
   "repository": {
