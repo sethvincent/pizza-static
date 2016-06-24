@@ -1,0 +1,23 @@
+{
+  "name": "pizza-static",
+  "version": "1.0.0",
+  "description": "",
+  "main": "contents.js",
+  "scripts": {
+    "build": "minidocs docs/ -c contents.js -b /pizza-static -o dist",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sethvincent/pizza-static.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sethvincent/pizza-static/issues"
+  },
+  "homepage": "https://github.com/sethvincent/pizza-static#readme",
+  "devDependencies": {
+    "gh-pages": "^0.11.0"
+  }
+}
