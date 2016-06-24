@@ -113,6 +113,9 @@ module.exports = function (params, state, send) {
       if (state.app && state.app.location) {
         location = url.parse(state.app.location)
         current = location.pathname.slice(1)
+        if (state.basedir) {
+          current = current.replace(state.basedir, '')
+        }
       }
 
       if (!current || current.length <= 1) {
