@@ -112,10 +112,8 @@ module.exports = function (params, state, send) {
 
       if (state.app && state.app.location) {
         location = url.parse(state.app.location)
-        current = location.pathname.slice(1)
-        if (state.basedir) {
-          current = current.replace(state.basedir, '')
-        }
+        var sliceBy = state.basedir.length + 1
+        current = location.pathname.slice(sliceBy)
       }
 
       if (!current || current.length <= 1) {
@@ -133,7 +131,7 @@ module.exports = function (params, state, send) {
   }
 
   function isActive (current, item) {
-    console.log('current', current)
+    console.log('current?', current)
     console.log('item', item)
     return current === item ? 'active' : ''
   }
