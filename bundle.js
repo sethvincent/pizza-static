@@ -112,7 +112,6 @@ module.exports = function (params, state, send) {
 
       if (state.app && state.app.location) {
         location = url.parse(state.app.location)
-        console.log('parsed location', location)
         var sliceBy = state.basedir.length + 1
         current = location.pathname.slice(sliceBy)
       }
@@ -122,10 +121,9 @@ module.exports = function (params, state, send) {
       }
 
       if (item.link) {
-        var huh = isActive(current, item.key)
-        console.log('huh', huh)
+        var active = isActive(current, item.key)
         return el`<div>
-          <a href="${item.link}" class="content-link">${item.name}</a>
+          <a href="${item.link}" class="content-link ${active}">${item.name}</a>
         </div>`
       }
 
@@ -134,9 +132,6 @@ module.exports = function (params, state, send) {
   }
 
   function isActive (current, item) {
-    console.log('current', current, current.length)
-    console.log('item', item, item.length)
-    console.log('current === item', current === item)
     return current === item ? 'active' : ''
   }
 
