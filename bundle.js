@@ -46,10 +46,7 @@ module.exports = function (params, state, send) {
   var html = state.html
   var currentPage = params.page || state.current
   var page = html[currentPage]
-  console.log('state.contents', state.contents)
   var pageData = state.contents.filter(function (item) {
-    console.log('item.key', item.key)
-    console.log('currentPage', currentPage)
     return item.key === currentPage
   })[0]
 
@@ -194,7 +191,6 @@ module.exports = function parseContents (options) {
         obj.source = value.link
         value = value.file
       }
-      console.log(options)
       var parsed = parsePath(value)
       obj.key = parsed.name
       obj.link = options.basedir + '/' + obj.key
